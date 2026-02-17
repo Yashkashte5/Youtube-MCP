@@ -65,19 +65,19 @@ Identifies posting patterns.
 
 Metadata and engagement metrics extraction.
 
-![Preview](demos/get_video_details.gif)
+![Preview](Demos/get_video_details-ezgif.com-video-to-gif-converter.gif)
 
 ### get_video_comments
 
 Comment extraction and analysis.
 
-![Preview](demos/get_video_comments.gif)
+![Preview](Demos/get_video_comments-ezgif.com-video-to-gif-converter.gif)
 
 ### get_video_transcript
 
 Transcript retrieval for NLP workflows.
 
-![Preview](demos/get_video_transcript.gif)
+![Preview](Demos/get_video_transcript-ezgif.com-video-to-gif-converter.gif)
 
 ### compare_videos
 
