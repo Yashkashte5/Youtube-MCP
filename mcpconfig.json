@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "youtube-mcp": {
+      "command": "Path to \\python.exe",
+      "args": [
+        "Path to\\Youtube MCP\\server.py"
+      ],
+      "env": {
+        "YOUTUBE_API_KEY": "YOUR API KEY HERE"
+      }
+    }
+  },
+  "preferences": {
+    "sidebarMode": "chat",
+    "coworkScheduledTasksEnabled": false
+  }
+}
