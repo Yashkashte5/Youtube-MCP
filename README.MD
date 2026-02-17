@@ -16,12 +16,14 @@ This repository provides a modular MCP server that enables:
 * Thumbnail analysis
 * SEO insights
 * Trend tracking
+* Engagement analytics
+* Comment keyword intelligence
 
-It is designed primarily for AI agent orchestration, YouTube automation workflows, and content intelligence research.
+Designed primarily for AI agent orchestration, YouTube automation workflows, and content intelligence research.
 
 ---
 
-## Tools Available
+## Tools Available (16 Total)
 
 ## Channel Analysis
 
@@ -29,31 +31,31 @@ It is designed primarily for AI agent orchestration, YouTube automation workflow
 
 Retrieves channel statistics and metadata.
 
-![Preview](demos/get_channel_overview.gif)
+![Preview](demos/get_channel_overview-ezgif.com-video-to-gif-converter.gif)
 
 ### get_channel_videos
 
 Lists videos from a channel.
 
-![Preview](demos/get_channel_videos.gif)
+![Preview](demos/get_channel_videos-ezgif.com-video-to-gif-converter.gif)
 
 ### get_channel_topics
 
 Extracts dominant channel themes.
 
-![Preview](demos/get_channel_topics.gif)
+![Preview](demos/get_channel_topics-ezgif.com-video-to-gif-converter.gif)
 
 ### compare_channels
 
 Comparative analytics between channels.
 
-![Preview](demos/compare_channels.gif)
+![Preview](demos/compare_channels-ezgif.com-video-to-gif-converter.gif)
 
 ### get_upload_schedule
 
 Identifies posting patterns.
 
-![Preview](demos/get_upload_schedule.gif)
+![Preview](demos/get_upload_schedule-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -81,23 +83,23 @@ Transcript retrieval for NLP workflows.
 
 Performance comparison across videos.
 
-![Preview](demos/compare_videos.gif)
+![Preview](demos/compare_videos-ezgif.com-video-to-gif-converter.gif)
 
 ### get_top_videos
 
 Best performing content detection.
 
-![Preview](demos/get_top_videos.gif)
+![Preview](demos/get_top_videos-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
-## Optimization & Insights
+## Optimization, SEO & Trends
 
 ### analyze_thumbnail
 
 Thumbnail effectiveness analysis.
 
-![Preview](demos/analyze_thumbnail.gif)
+![Preview](demos/analyze_thumbnail-ezgif.com-video-to-gif-converter.gif)
 
 ### get_video_seo_score
 
@@ -109,13 +111,29 @@ SEO evaluation for discoverability.
 
 Tag optimization insights.
 
-![Preview](demos/get_tag_analysis.gif)
+![Preview](demos/get_tag_analysis-ezgif.com-video-to-gif-converter.gif)
 
 ### get_trending_videos
 
 Trending content discovery.
 
-![Preview](demos/get_trending_videos.gif)
+![Preview](demos/get_trending_videos-ezgif.com-video-to-gif-converter.gif)
+
+---
+
+## Advanced Analytics
+
+### get_engagement_stats
+
+Deep engagement metrics across videos.
+
+![Preview](demos/get_engagement_stats-ezgif.com-video-to-gif-converter.gif)
+
+### get_comment_keywords
+
+Extracts keyword intelligence from comments.
+
+![Preview](demos/get_comment_keywords-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -141,8 +159,6 @@ If integrated with an MCP runtime/client:
 mcp run server.py
 ```
 
-(Adjust based on your MCP environment.)
-
 ---
 
 ## Example Use Cases
@@ -151,7 +167,8 @@ mcp run server.py
 * Content strategy analysis
 * Competitor benchmarking
 * Automated SEO recommendations
-* Video transcript NLP pipelines
+* Audience sentiment analysis
+* Engagement analytics dashboards
 
 ---
 
@@ -162,7 +179,7 @@ Youtube-MCP/
 │
 ├── server.py
 ├── tools/
-├── demos/        # GIF demos for each tool
+├── demos/
 ├── requirements.txt
 └── README.md
 ```
@@ -171,9 +188,9 @@ Youtube-MCP/
 
 ## Roadmap
 
-* Additional analytics tools
-* Multi-platform intelligence integrations
-* Improved agent orchestration support
+* Expanded analytics tools
+* Cross-platform video intelligence
+* Stronger MCP agent orchestration integrations
 * Real-time trend monitoring
 
 ---
@@ -184,7 +201,7 @@ Pull requests and improvements are welcome. Focus areas:
 
 * Tool reliability
 * Performance optimization
-* Expanded analytics features
+* Additional analytics capabilities
 
 ---
 
