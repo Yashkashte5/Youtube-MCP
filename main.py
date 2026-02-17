@@ -1,29 +1,3 @@
-"""
-main.py — YouTube MCP Tool Logic
-All tools and YouTube Data API v3 integration live here.
-
-Tools:
-  v1 Core:
-    1.  get_channel_overview
-    2.  get_channel_videos
-    3.  get_video_details
-    4.  get_video_comments
-    5.  get_video_transcript
-    6.  analyze_thumbnail
-
-  v2 Growth:
-    7.  get_trending_videos
-    8.  compare_videos
-    9.  get_channel_topics
-    10. compare_channels
-    11. get_top_videos
-    12. get_upload_schedule
-    13. get_tag_analysis
-    14. get_video_seo_score
-    15. get_engagement_stats
-    16. get_comment_keywords
-"""
-
 import re
 import os
 import statistics
@@ -35,21 +9,10 @@ from datetime import datetime
 from dotenv import load_dotenv
 from youtube_transcript_api import YouTubeTranscriptApi
 
-
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
-
-# Load .env from the same folder as this file — works regardless of cwd
 load_dotenv(dotenv_path=Path(__file__).parent / ".env")
 
 API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
 BASE_URL = "https://www.googleapis.com/youtube/v3"
-
-
-# ---------------------------------------------------------------------------
-# Internal helpers
-# ---------------------------------------------------------------------------
 
 def _get(endpoint: str, params: dict) -> dict:
     """Thin wrapper around requests.get with shared API key and error handling."""
@@ -70,12 +33,10 @@ def resolve_channel_id(channel_url: str) -> str:
     parsed = urlparse(channel_url)
     path = parsed.path.rstrip("/")
 
-    # Direct channel ID — fast path, no API call needed
     match = re.match(r"^/channel/(UC[\w-]+)$", path)
     if match:
         return match.group(1)
 
-    # Handle-based URL (@handle)
     handle_match = re.match(r"^/@([\w.-]+)$", path)
     if handle_match:
         handle = handle_match.group(1)
@@ -200,15 +161,6 @@ def _fetch_videos_for_channel(channel_url: str, limit: int = 50) -> list:
 
     return videos
 
-
-# ===========================================================================
-# v1 CORE TOOLS
-# ===========================================================================
-
-# ---------------------------------------------------------------------------
-# Tool 1 — get_channel_overview
-# ---------------------------------------------------------------------------
-
 def get_channel_overview(channel_url: str) -> dict:
     """Return a flat overview of a public YouTube channel."""
     channel_id = resolve_channel_id(channel_url)
@@ -237,11 +189,6 @@ def get_channel_overview(channel_url: str) -> dict:
         "thumbnail_url": _thumbnail_url(snippet.get("thumbnails", {})),
     }
 
-
-# ---------------------------------------------------------------------------
-# Tool 2 — get_channel_videos
-# ---------------------------------------------------------------------------
-
 def get_channel_videos(channel_url: str, limit: int = 50) -> list:
     """Return a list of recent public videos from a channel with per-video stats."""
     videos = _fetch_videos_for_channel(channel_url, limit)
@@ -249,11 +196,6 @@ def get_channel_videos(channel_url: str, limit: int = 50) -> list:
         {k: v for k, v in video.items() if k != "tags"}
         for video in videos
     ]
-
-
-# ---------------------------------------------------------------------------
-# Tool 3 — get_video_details
-# ---------------------------------------------------------------------------
 
 def get_video_details(video_id: str) -> dict:
     """Return detailed metadata for a single video, including tags."""
@@ -283,11 +225,6 @@ def get_video_details(video_id: str) -> dict:
         "comments": _safe_int(stats.get("commentCount", 0)),
         "thumbnail_url": _thumbnail_url(snippet.get("thumbnails", {})),
     }
-
-
-# ---------------------------------------------------------------------------
-# Tool 4 — get_video_comments
-# ---------------------------------------------------------------------------
 
 def get_video_comments(video_id: str, limit: int = 100) -> dict:
     """Return top-level comments for a video, sorted by relevance."""
@@ -333,11 +270,6 @@ def get_video_comments(video_id: str, limit: int = 100) -> dict:
         "comments": comments,
     }
 
-
-# ---------------------------------------------------------------------------
-# Tool 5 — get_video_transcript
-# ---------------------------------------------------------------------------
-
 def get_video_transcript(video_id: str) -> dict:
     """
     Fetch the auto-generated or manual transcript for a video.
@@ -366,11 +298,6 @@ def get_video_transcript(video_id: str) -> dict:
         "word_count": word_count,
         "segment_count": len(raw),
     }
-
-
-# ---------------------------------------------------------------------------
-# Tool 6 — analyze_thumbnail
-# ---------------------------------------------------------------------------
 
 def analyze_thumbnail(video_id: str) -> dict:
     """Return basic image metadata for a video's thumbnail."""
@@ -408,15 +335,6 @@ def analyze_thumbnail(video_id: str) -> dict:
         "resolution": resolution,
         "file_size_bytes": file_size_bytes,
     }
-
-
-# ===========================================================================
-# v2 GROWTH TOOLS
-# ===========================================================================
-
-# ---------------------------------------------------------------------------
-# Tool 7 — get_trending_videos
-# ---------------------------------------------------------------------------
 
 def get_trending_videos(region_code: str = "US", category_id: str = "0", limit: int = 25) -> list:
     """
@@ -459,11 +377,6 @@ def get_trending_videos(region_code: str = "US", category_id: str = "0", limit: 
         })
 
     return results
-
-
-# ---------------------------------------------------------------------------
-# Tool 8 — compare_videos
-# ---------------------------------------------------------------------------
 
 def compare_videos(video_ids: list) -> dict:
     """Side-by-side stats comparison for up to 10 video IDs."""
@@ -509,11 +422,6 @@ def compare_videos(video_ids: list) -> dict:
         "winner_by_engagement_rate": _winner("engagement_rate_pct"),
     }
 
-
-# ---------------------------------------------------------------------------
-# Tool 9 — get_channel_topics
-# ---------------------------------------------------------------------------
-
 def get_channel_topics(channel_url: str) -> dict:
     """
     Return the topic categories YouTube has associated with a channel.
@@ -537,8 +445,6 @@ def get_channel_topics(channel_url: str) -> dict:
     topic_details = item.get("topicDetails", {})
     raw_categories = topic_details.get("topicCategories", [])
 
-    # Extract readable topic name from Wikipedia URL
-    # e.g. "https://en.wikipedia.org/wiki/Gaming" -> "Gaming"
     readable_topics = [url.split("/wiki/")[-1].replace("_", " ") for url in raw_categories]
 
     return {
@@ -547,11 +453,6 @@ def get_channel_topics(channel_url: str) -> dict:
         "topics": readable_topics,
         "topic_category_urls": raw_categories,
     }
-
-
-# ---------------------------------------------------------------------------
-# Tool 10 — compare_channels
-# ---------------------------------------------------------------------------
 
 def compare_channels(channel_urls: list) -> dict:
     """Side-by-side overview comparison for up to 5 channels."""
@@ -572,11 +473,6 @@ def compare_channels(channel_urls: list) -> dict:
         "winner_by_total_views": _winner("total_views"),
         "winner_by_video_count": _winner("total_videos"),
     }
-
-
-# ---------------------------------------------------------------------------
-# Tool 11 — get_top_videos
-# ---------------------------------------------------------------------------
 
 def get_top_videos(channel_url: str, metric: str = "views", limit: int = 10) -> list:
     """
@@ -612,11 +508,6 @@ def get_top_videos(channel_url: str, metric: str = "views", limit: int = 10) -> 
         }
         for idx, v in enumerate(sorted_videos)
     ]
-
-
-# ---------------------------------------------------------------------------
-# Tool 12 — get_upload_schedule
-# ---------------------------------------------------------------------------
 
 def get_upload_schedule(channel_url: str, limit: int = 50) -> dict:
     """
@@ -673,11 +564,6 @@ def get_upload_schedule(channel_url: str, limit: int = 50) -> dict:
         "best_posting_hour": f"{best_hour}:00 UTC" if best_hour else "",
     }
 
-
-# ---------------------------------------------------------------------------
-# Tool 13 — get_tag_analysis
-# ---------------------------------------------------------------------------
-
 def get_tag_analysis(channel_url: str, limit: int = 50) -> dict:
     """
     Aggregate tags across a channel's videos and correlate with performance.
@@ -719,11 +605,6 @@ def get_tag_analysis(channel_url: str, limit: int = 50) -> dict:
         "top_tags_by_avg_views": sorted(tag_stats, key=lambda x: x["avg_views"], reverse=True)[:20],
     }
 
-
-# ---------------------------------------------------------------------------
-# Tool 14 — get_video_seo_score
-# ---------------------------------------------------------------------------
-
 def get_video_seo_score(video_id: str) -> dict:
     """
     Check a video's metadata against YouTube SEO best practices.
@@ -746,7 +627,6 @@ def get_video_seo_score(video_id: str) -> dict:
 
     checks = {}
 
-    # Title length (ideal: 40–70 chars)
     tlen = len(title)
     if 40 <= tlen <= 70:
         checks["title_length"] = {"score": 100, "status": "great", "note": f"{tlen} chars (ideal: 40–70)"}
@@ -757,7 +637,6 @@ def get_video_seo_score(video_id: str) -> dict:
     else:
         checks["title_length"] = {"score": 30, "status": "poor", "note": f"{tlen} chars (too short)"}
 
-    # Description length (ideal: 200+ chars)
     dlen = len(description)
     if dlen >= 500:
         checks["description_length"] = {"score": 100, "status": "great", "note": f"{dlen} chars"}
@@ -768,7 +647,6 @@ def get_video_seo_score(video_id: str) -> dict:
     else:
         checks["description_length"] = {"score": 10, "status": "poor", "note": f"{dlen} chars (missing or very short)"}
 
-    # Tag count (ideal: 5–15)
     tcount = len(tags)
     if 5 <= tcount <= 15:
         checks["tag_count"] = {"score": 100, "status": "great", "note": f"{tcount} tags (ideal: 5–15)"}
@@ -779,13 +657,11 @@ def get_video_seo_score(video_id: str) -> dict:
     else:
         checks["tag_count"] = {"score": 0, "status": "poor", "note": "No tags found"}
 
-    # Thumbnail present
     if thumbnail:
         checks["thumbnail"] = {"score": 100, "status": "great", "note": "Thumbnail present"}
     else:
         checks["thumbnail"] = {"score": 0, "status": "poor", "note": "No thumbnail found"}
 
-    # Description quality (links + timestamps)
     has_links = "http" in description.lower()
     has_chapters = bool(re.search(r"\d+:\d+", description))
     desc_score = 60
@@ -811,10 +687,6 @@ def get_video_seo_score(video_id: str) -> dict:
         "checks": checks,
     }
 
-
-# ---------------------------------------------------------------------------
-# Tool 15 — get_engagement_stats
-# ---------------------------------------------------------------------------
 
 def get_engagement_stats(channel_url: str, limit: int = 50) -> dict:
     """
@@ -868,11 +740,6 @@ def get_engagement_stats(channel_url: str, limit: int = 50) -> dict:
         },
         "videos": enriched,
     }
-
-
-# ---------------------------------------------------------------------------
-# Tool 16 — get_comment_keywords
-# ---------------------------------------------------------------------------
 
 def get_comment_keywords(video_id: str, limit: int = 200, top_n: int = 30) -> dict:
     """

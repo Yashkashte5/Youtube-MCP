@@ -15,28 +15,16 @@ from mcp.types import (
 )
 import main
 
-# ---------------------------------------------------------------------------
-# Logging
-# ---------------------------------------------------------------------------
+
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("youtube-mcp")
 
-# ---------------------------------------------------------------------------
-# Server instance
-# ---------------------------------------------------------------------------
 
 app = Server("youtube-mcp")
 
-# ---------------------------------------------------------------------------
-# Tool definitions
-# ---------------------------------------------------------------------------
-
 TOOLS: list[Tool] = [
 
-    # -----------------------------------------------------------------------
-    # v1 Core Tools
-    # -----------------------------------------------------------------------
 
     Tool(
         name="get_channel_overview",
@@ -165,10 +153,6 @@ TOOLS: list[Tool] = [
             "required": ["video_id"],
         },
     ),
-
-    # -----------------------------------------------------------------------
-    # v2 Growth Tools
-    # -----------------------------------------------------------------------
 
     Tool(
         name="get_trending_videos",
@@ -433,9 +417,6 @@ TOOLS: list[Tool] = [
 
 ]
 
-# ---------------------------------------------------------------------------
-# MCP handlers
-# ---------------------------------------------------------------------------
 
 @app.list_tools()
 async def list_tools() -> ListToolsResult:
@@ -478,7 +459,7 @@ def _dispatch(name: str, args: dict):
     """
     match name:
 
-        # v1 Core
+        
         case "get_channel_overview":
             return main.get_channel_overview(channel_url=args["channel_url"])
 
@@ -503,7 +484,7 @@ def _dispatch(name: str, args: dict):
         case "analyze_thumbnail":
             return main.analyze_thumbnail(video_id=args["video_id"])
 
-        # v2 Growth
+        
         case "get_trending_videos":
             return main.get_trending_videos(
                 region_code=args.get("region_code", "US"),
@@ -557,11 +538,6 @@ def _dispatch(name: str, args: dict):
 
         case _:
             raise ValueError(f"Unknown tool: '{name}'")
-
-
-# ---------------------------------------------------------------------------
-# Entrypoint
-# ---------------------------------------------------------------------------
 
 async def run():
     """Start the MCP server over stdio."""
