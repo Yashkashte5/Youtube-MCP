@@ -31,31 +31,31 @@ Designed primarily for AI agent orchestration, YouTube automation workflows, and
 
 Retrieves channel statistics and metadata.
 
-![Preview](demos/get_channel_overview-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_channel_overview-ezgif.com-video-to-gif-converter.gif)
 
 ### get_channel_videos
 
 Lists videos from a channel.
 
-![Preview](demos/get_channel_videos-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_channel_videos-ezgif.com-video-to-gif-converter.gif)
 
 ### get_channel_topics
 
 Extracts dominant channel themes.
 
-![Preview](demos/get_channel_topics-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_channel_topics-ezgif.com-video-to-gif-converter.gif)
 
 ### compare_channels
 
 Comparative analytics between channels.
 
-![Preview](demos/compare_channels-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/compare_channels-ezgif.com-video-to-gif-converter.gif)
 
 ### get_upload_schedule
 
 Identifies posting patterns.
 
-![Preview](demos/get_upload_schedule-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_upload_schedule-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -65,31 +65,31 @@ Identifies posting patterns.
 
 Metadata and engagement metrics extraction.
 
-![Preview](demos/get_video_details.gif)
+![Preview](Demos/get_video_details-ezgif.com-video-to-gif-converter.gif)
 
 ### get_video_comments
 
 Comment extraction and analysis.
 
-![Preview](demos/get_video_comments.gif)
+![Preview](Demos/get_video_comments-ezgif.com-video-to-gif-converter.gif)
 
 ### get_video_transcript
 
 Transcript retrieval for NLP workflows.
 
-![Preview](demos/get_video_transcript.gif)
+![Preview](Demos/get_video_transcript-ezgif.com-video-to-gif-converter.gif)
 
 ### compare_videos
 
 Performance comparison across videos.
 
-![Preview](demos/compare_videos-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/compare_videos-ezgif.com-video-to-gif-converter.gif)
 
 ### get_top_videos
 
 Best performing content detection.
 
-![Preview](demos/get_top_videos-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_top_videos-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -99,25 +99,25 @@ Best performing content detection.
 
 Thumbnail effectiveness analysis.
 
-![Preview](demos/analyze_thumbnail-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/analyze_thumbnail-ezgif.com-video-to-gif-converter.gif)
 
 ### get_video_seo_score
 
 SEO evaluation for discoverability.
 
-![Preview](demos/get_video_seo_score.gif)
+![Preview](Demos/get_video_seo_score.gif)
 
 ### get_tag_analysis
 
 Tag optimization insights.
 
-![Preview](demos/get_tag_analysis-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_tag_analysis-ezgif.com-video-to-gif-converter.gif)
 
 ### get_trending_videos
 
 Trending content discovery.
 
-![Preview](demos/get_trending_videos-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_trending_videos-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -127,13 +127,13 @@ Trending content discovery.
 
 Deep engagement metrics across videos.
 
-![Preview](demos/get_engagement_stats-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_engagement_stats-ezgif.com-video-to-gif-converter.gif)
 
 ### get_comment_keywords
 
 Extracts keyword intelligence from comments.
 
-![Preview](demos/get_comment_keywords-ezgif.com-video-to-gif-converter.gif)
+![Preview](Demos/get_comment_keywords-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
@@ -179,7 +179,7 @@ Youtube-MCP/
 │
 ├── server.py
 ├── tools/
-├── demos/
+├── Demos/
 ├── requirements.txt
 └── README.md
 ```
