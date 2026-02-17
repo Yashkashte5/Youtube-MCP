@@ -105,7 +105,7 @@ Thumbnail effectiveness analysis.
 
 SEO evaluation for discoverability.
 
-![Preview](Demos/get_video_seo_score.gif)
+![Preview](Demos/get_video_seo_score-ezgif.com-video-to-gif-converter.gif)
 
 ### get_tag_analysis
 
