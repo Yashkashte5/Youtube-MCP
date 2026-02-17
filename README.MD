@@ -114,39 +114,97 @@ Replace `/absolute/path/to/Youtube-MCP/` with your actual project path.
 
 ### Channel Analysis
 
-| Tool | Description | Demo |
-|------|-------------|------|
-| **get_channel_overview** | Subscriber count, total views, video count, creation date | ![Demo](Demos/get_channel_overview-ezgif.com-video-to-gif-converter.gif) |
-| **get_channel_videos** | Recent video list with views, likes, comments, duration | ![Demo](Demos/get_channel_videos-ezgif.com-video-to-gif-converter.gif) |
-| **get_channel_topics** | YouTube's topic categories (Gaming, Music, Tech, etc.) | ![Demo](Demos/get_channel_topics-ezgif.com-video-to-gif-converter.gif) |
-| **compare_channels** | Side-by-side channel comparison (max 5 channels) | ![Demo](Demos/compare_channels-ezgif.com-video-to-gif-converter.gif) |
-| **get_upload_schedule** | Posting frequency by day/hour, consistency score | ![Demo](Demos/get_upload_schedule-ezgif.com-video-to-gif-converter.gif) |
+#### get_channel_overview
+Subscriber count, total views, video count, creation date
+
+![Demo](Demos/get_channel_overview-ezgif.com-video-to-gif-converter.gif)
+
+#### get_channel_videos
+Recent video list with views, likes, comments, duration
+
+![Demo](Demos/get_channel_videos-ezgif.com-video-to-gif-converter.gif)
+
+#### get_channel_topics
+YouTube's topic categories (Gaming, Music, Tech, etc.)
+
+![Demo](Demos/get_channel_topics-ezgif.com-video-to-gif-converter.gif)
+
+#### compare_channels
+Side-by-side channel comparison (max 5 channels)
+
+![Demo](Demos/compare_channels-ezgif.com-video-to-gif-converter.gif)
+
+#### get_upload_schedule
+Posting frequency by day/hour, consistency score
+
+![Demo](Demos/get_upload_schedule-ezgif.com-video-to-gif-converter.gif)
+
+---
 
 ### Video Intelligence
 
-| Tool | Description | Demo |
-|------|-------------|------|
-| **get_video_details** | Full metadata: title, description, tags, stats | ![Demo](Demos/get_video_details-ezgif.com-video-to-gif-converter.gif) |
-| **get_video_comments** | Top comments sorted by relevance with like counts | ![Demo](Demos/get_video_comments-ezgif.com-video-to-gif-converter.gif) |
-| **get_video_transcript** | Auto-generated or manual transcripts for NLP | ![Demo](Demos/get_video_transcript-ezgif.com-video-to-gif-converter.gif) |
-| **compare_videos** | Performance comparison across multiple videos | ![Demo](Demos/compare_videos-ezgif.com-video-to-gif-converter.gif) |
-| **get_top_videos** | Channel's best performers by views/likes/engagement | ![Demo](Demos/get_top_videos-ezgif.com-video-to-gif-converter.gif) |
+#### get_video_details
+Full metadata: title, description, tags, stats
+
+![Demo](Demos/get_video_details-ezgif.com-video-to-gif-converter.gif)
+
+#### get_video_comments
+Top comments sorted by relevance with like counts
+
+![Demo](Demos/get_video_comments-ezgif.com-video-to-gif-converter.gif)
+
+#### get_video_transcript
+Auto-generated or manual transcripts for NLP
+
+![Demo](Demos/get_video_transcript-ezgif.com-video-to-gif-converter.gif)
+
+#### compare_videos
+Performance comparison across multiple videos
+
+![Demo](Demos/compare_videos-ezgif.com-video-to-gif-converter.gif)
+
+#### get_top_videos
+Channel's best performers by views/likes/engagement
+
+![Demo](Demos/get_top_videos-ezgif.com-video-to-gif-converter.gif)
+
+---
 
 ### SEO & Optimization
 
-| Tool | Description | Demo |
-|------|-------------|------|
-| **analyze_thumbnail** | Thumbnail URL, resolution, file size metadata | ![Demo](Demos/analyze_thumbnail-ezgif.com-video-to-gif-converter.gif) |
-| **get_video_seo_score** | 0-100 score: title, description, tags, thumbnail quality | ![Demo](Demos/get_video_seo_score-ezgif.com-video-to-gif-converter.gif) |
-| **get_tag_analysis** | Tag frequency and correlation with video performance | ![Demo](Demos/get_tag_analysis-ezgif.com-video-to-gif-converter.gif) |
-| **get_trending_videos** | Popular videos by region/category (Music, Gaming, Movies) | ![Demo](Demos/get_trending_videos-ezgif.com-video-to-gif-converter.gif) |
+#### analyze_thumbnail
+Thumbnail URL, resolution, file size metadata
+
+![Demo](Demos/analyze_thumbnail-ezgif.com-video-to-gif-converter.gif)
+
+#### get_video_seo_score
+0-100 score: title, description, tags, thumbnail quality
+
+![Demo](Demos/get_video_seo_score-ezgif.com-video-to-gif-converter.gif)
+
+#### get_tag_analysis
+Tag frequency and correlation with video performance
+
+![Demo](Demos/get_tag_analysis-ezgif.com-video-to-gif-converter.gif)
+
+#### get_trending_videos
+Popular videos by region/category (Music, Gaming, Movies)
+
+![Demo](Demos/get_trending_videos-ezgif.com-video-to-gif-converter.gif)
+
+---
 
 ### Advanced Analytics
 
-| Tool | Description | Demo |
-|------|-------------|------|
-| **get_engagement_stats** | Like rate, comment rate, engagement rate per video | ![Demo](Demos/get_engagement_stats-ezgif.com-video-to-gif-converter.gif) |
-| **get_comment_keywords** | Most frequent words in comments (stopwords filtered) | ![Demo](Demos/get_comment_keywords-ezgif.com-video-to-gif-converter.gif) |
+#### get_engagement_stats
+Like rate, comment rate, engagement rate per video
+
+![Demo](Demos/get_engagement_stats-ezgif.com-video-to-gif-converter.gif)
+
+#### get_comment_keywords
+Most frequent words in comments (stopwords filtered)
+
+![Demo](Demos/get_comment_keywords-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
