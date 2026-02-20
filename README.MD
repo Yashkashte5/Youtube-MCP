@@ -1,3 +1,6 @@
+<a href="https://glama.ai/mcp/servers/@Yashkashte5/youtube-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@Yashkashte5/youtube-mcp/badge" />
+</a>
 # YouTube MCP Server
 
 Production-grade Model Context Protocol (MCP) server for YouTube intelligence. Extract, analyze, and automate insights from YouTube channels and videos using the official YouTube Data API v3.
