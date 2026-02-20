@@ -1,13 +1,7 @@
-
 mcp
-
 requests
-
 isodate
-
 youtube-transcript-api
-
 Pillow
-
 python-dotenv
 nltk
